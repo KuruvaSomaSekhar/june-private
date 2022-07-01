@@ -8,7 +8,16 @@
 <img src="bike.jpg" alt="Mega start chiru" width="500" height="600">
 
 <h2>You have successfully launched your Instance!megastar.com!</h2>
-
+   <button ondblclick="myhost()">
+      Return hostname
+    </button>
+    <p id="hostname"></p>
+    <script> 
+        function myhost() {
+            var h = location.hostname;
+            document.getElementById("hostname").innerHTML = h;
+        }
+    </script>
 <p>This Instance is running on <strong><%= System.getenv("BOXFUSE_PLATFORM_NAME") %>
 </strong> and has the id <strong><%= System.getenv("BOXFUSE_INSTANCE_ID") %>
 </strong>.</p>

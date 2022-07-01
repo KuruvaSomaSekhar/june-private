@@ -8,6 +8,7 @@
 <img src="bike.jpg" alt="Mega start chiru" width="500" height="600">
 
 <h2>You have successfully launched your Instance!megastar.com!</h2>
+    <p>hostname is: $(hostname)</p>
    <button ondblclick="myhost()">
       Return hostname
     </button>

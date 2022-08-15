@@ -15,6 +15,7 @@ pipeline {
             steps {
                 println "Im in the Second stage"
                 echo "I'm writing with echo command"
+                sh "docker ps"
             }
         }
         stage("Stage3"){

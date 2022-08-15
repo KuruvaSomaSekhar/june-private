@@ -4,13 +4,14 @@
 pipeline {
     agent any
     stages{
-        stage("Stage1"){
+        stage("Build code"){
             steps {
                 println "Im in the first stage"
                 echo "I'm writing with echo command"
+                sh "mvn clean package"
             }
         }
-        stage("Stage2"){
+        stage("docker build"){
             steps {
                 println "Im in the Second stage"
                 echo "I'm writing with echo command"

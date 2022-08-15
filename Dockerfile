@@ -10,7 +10,8 @@ RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|
 
 RUN yum install java-1.8.0-openjdk -y
 WORKDIR /opt/tomcat/webapps
-RUN curl -O https://june22artifacts.s3.us-east-2.amazonaws.com/hello-15.war
+#RUN curl -O https://june22artifacts.s3.us-east-2.amazonaws.com/hello-15.war
+COPY target/hello-*.war .
 RUN curl -O -L https://github.com/AKSarav/SampleWebApp/raw/master/dist/SampleWebApp.war
 EXPOSE 8080
 CMD ["/opt/tomcat/bin/catalina.sh", "run"]

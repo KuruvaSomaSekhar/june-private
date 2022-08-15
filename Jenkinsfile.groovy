@@ -16,7 +16,11 @@ pipeline {
                 println "Im in the Second stage"
                 echo "I'm writing with echo command"
                 sh "docker ps"
-                sh "docker build -t jtomcat:v${BUILD_NUMBER} ."
+                sh """ docker build -t jtomcat:v${BUILD_NUMBER} .
+                        docker image tag jtomcat:v${BUILD_NUMBER} kuruvasomasekhar/jtomcat:v${BUILD_NUMBER} 
+                        docker images
+                        docker push kuruvasomasekhar/jtomcat:v${BUILD_NUMBER}
+                """
             }
         }
         stage("Stage3"){
